@@ -1,41 +1,248 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admission</title>
-
+    <title>Admissions - Bright School</title>
     <style>
-        body{
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-           
-            height: 100vh;
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            color: #333;
         }
-.back-btn{
-    position:absolute;
-    top:20px;
-    left:20px;
-}
-.back-btn img{
-    width:28px;
-    padding:5px;
-    border-radius:50%;
-    background:#f0f0f0;
-    transition:0.3s;
-}
 
-.back-btn img:hover{
-    background:#162a47;
-}
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .back-btn img {
+            width: 28px;
+            padding: 8px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        /* Header Section */
+        .admission-header {
+            background: #162a47;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .admission-header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .admission-header p {
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 10px auto 0;
+        }
+
+        /* Main Content Container */
+        .admission-container {
+            max-width: 1000px;
+            margin: -40px auto 60px; /* Pulls content up over the header */
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 30px;
+        }
+
+        /* Enrollment Steps */
+        .steps-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+
+        .steps-card h3 {
+            color: #162a47;
+            margin-top: 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .step-num {
+            background: #162a47;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .step-text b { display: block; color: #162a47; }
+        .step-text span { font-size: 14px; color: #666; }
+
+        /* Admission Form */
+        .form-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .full-width { grid-column: span 2; }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #162a47;
+            font-size: 14px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #162a47;
+        }
+
+        .submit-btn {
+            background: #162a47;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #0d6efd;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 850px) {
+            .admission-container {
+                grid-template-columns: 1fr;
+                margin-top: 20px;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .full-width { grid-column: span 1; }
+        }
     </style>
 </head>
 <body>
 
-   <h2>Addmission Open </h2> 
+    <a href="index.html" class="back-btn">
+        <img src="https://cdn-icons-png.flaticon.com/128/9312/9312240.png" alt="Back">
+    </a>
 
-<a href="index.html" class="back-btn">
-<img src="https://cdn-icons-png.flaticon.com/128/9312/9312240.png" alt="Back" width="30">
-</a>
+    <header class="admission-header">
+        <h1>Join For The Bright Future</h1>
+        <p>Start your child's journey toward excellence today. Applications for the 2026-2027 academic year are now open.</p>
+    </header>
+
+    <div class="admission-container">
+        
+        <div class="steps-card">
+            <h3>How to Apply</h3>
+            
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-text">
+                    <b>Online Registration</b>
+                    <span>Fill out the inquiry form with student details.</span>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-text">
+                    <b>Document Review</b>
+                    <span>Our team will verify birth certificates and records.</span>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-text">
+                    <b>Entrance Interview</b>
+                    <span>A brief interaction session with the student.</span>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-text">
+                    <b>Final Enrollment</b>
+                    <span>Secure the seat by completing the fee process.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <h3 style="color: #162a47; margin-top: 0;">Application Form</h3>
+            <form action="#">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Student First Name</label>
+                        <input type="text" placeholder="e.g. Ajay">
+                    </div>
+                    <div class="form-group">
+                        <label>Student Last Name</label>
+                        <input type="text" placeholder="e.g. B">
+                    </div>
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        <input type="date">
+                    </div>
+                 
+                    
+                    <div class="form-group full-width">
+                        <label>Contact Number</label>
+                        <input type="tel" placeholder="+91 00000 00000">
+                    </div>
+                    
+                </div>
+                <button type="submit" class="submit-btn">Submit Application</button>
+            </form>
+        </div>
+
+    </div>
+
 </body>
 </html>
