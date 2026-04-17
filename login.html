@@ -13,16 +13,19 @@ body{
     align-items:center;
     height:100vh;
 }
-.login-box{
+.login-box {
     background:white;
     padding:30px;
     width:350px;
     border-radius:12px;
     box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
-h2{
+
+
+h2,a{
     text-align:center;
     margin-bottom:20px;
+    
 }
 input{
     width:100%;
@@ -43,12 +46,17 @@ button{
 button:hover{
     background:#0d6efd;
 }
+
+
 </style>
 </head>
 <body>
 
 <div class="login-box">
+    
     <h2>Student Login</h2>
+    <a href="index.html"> <img src="https://cdn-icons-png.flaticon.com/128/9312/9312240.png" alt="back button" width="30">
+    </a>
     <input type="email" placeholder="Enter your email">
     <input type="password" placeholder="Enter your password">
     <button onclick="loginStudent()">Login</button>
