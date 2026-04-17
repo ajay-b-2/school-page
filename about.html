@@ -4,48 +4,177 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us</title>
+
 <style>
-body{
-    font-family:Arial,sans-serif;
-    padding:50px;
-    background:#f4f7fb;
-    text-align:center;
-}
-h1{
-    color:#162a47;
-    margin-left:20px;
-}
-p{
-    max-width:700px;
-    margin:auto;
-    line-height:1.8;
-    font-size:18px;
-}
-a{
-    display:inline-block;
-    margin-top:30px;
-    padding:2px 4px;
-    background:#cfcfcf;
-    color:white;
-    text-decoration:none;
-    border-radius:10px;
-    
-  position: absolute;
-  top: 10px;  /* Distance from the top edge */
-  left: 30px; /* Distance from the left edge */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
+body{
+    background:#f4f7fb;
+}
+
+/* Back Button */
+.back-btn{
+    position:absolute;
+    top:20px;
+    left:20px;
+}
+
+.back-btn img{
+    width:35px;
+    background:#fff;
+    padding:6px;
+    border-radius:50%;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Hero Section */
+.hero{
+    background:linear-gradient(rgba(22,42,71,0.8), rgba(22,42,71,0.8)),
+    url('https://images.unsplash.com/photo-1588072432836-e10032774350');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.6;
+}
+
+/* About Section */
+.about{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.about h2{
+    color:#162a47;
+    margin-bottom:20px;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.8;
+    color:#333;
+}
+
+/* Cards Section */
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:40px 20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    width:280px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#162a47;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:16px;
+    color:#555;
+    line-height:1.6;
+}
+
+/* Footer */
+.footer{
+    text-align:center;
+    padding:20px;
+    background:#162a47;
+    color:white;
+    margin-top:40px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+}
 </style>
+
 </head>
 <body>
 
-<h1>About Midtown School</h1>
-<p>
-   Our school is committed to providing quality education in a safe, supportive, and inspiring learning environment. With experienced teachers, modern teaching methods, and a focus on academic excellence, we help students develop knowledge, creativity, discipline, and confidence. Along with strong classroom learning, we encourage sports, arts, technology, and value-based education to ensure the overall growth of every child and prepare them for a successful future.
-</p>
-
-<a href="index.html">
-  <img src="https://cdn-icons-png.flaticon.com/128/9312/9312240.png" alt="Back Button" width="30">
+<!-- Back Button -->
+<a href="index.html" class="back-btn">
+    <img src="https://cdn-icons-png.flaticon.com/128/9312/9312240.png" alt="Back">
 </a>
+
+<!-- Hero Section -->
+<div class="hero">
+    <h1>Midtown School</h1>
+    <p>Shaping young minds with knowledge, creativity, and innovation for a brighter future.</p>
+</div>
+
+<!-- About -->
+<div class="about">
+    <h2>Who We Are</h2>
+    <p>
+        Midtown School is dedicated to delivering high-quality education in a safe, inspiring, and student-focused environment. 
+        Our experienced educators use modern teaching methods to nurture curiosity, creativity, and confidence in every student. 
+        We believe in building strong academic foundations while encouraging personal growth through sports, arts, and technology.
+    </p>
+</div>
+
+<!-- Cards -->
+<div class="cards">
+    <div class="card">
+        <h3>Our Mission</h3>
+        <p>To provide quality education that empowers students with knowledge, skills, and values for lifelong success.</p>
+    </div>
+
+    <div class="card">
+        <h3>Our Vision</h3>
+        <p>To be a leading institution that inspires innovation, excellence, and responsible global citizens.</p>
+    </div>
+
+    <div class="card">
+        <h3>Our Values</h3>
+        <p>Integrity, respect, creativity, discipline, and continuous learning are at the heart of everything we do.</p>
+    </div>
+</div>
+
+<!-- Footer -->
+<!-- 
+<div class="footer">
+    <p>© 2026 Midtown School | All Rights Reserved</p>
+</div> -->
+
 </body>
 </html>
