@@ -1,102 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
 
-<style>
-body{
-    font-family:Arial,sans-serif;
-    background:#f4f7fb;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-/* Login Box */
-.login-box {
-    position:relative; /* IMPORTANT */
-    background:white;
-    padding:30px;
-    width:350px;
-    border-radius:12px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
+        /* Login Box */
+        .login-box {
+            position: relative;
+            background: white;
+            padding: 30px;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
 
-/* Back Button INSIDE box */
-.back-btn{
-    position:absolute;
-    top:15px;
-    left:15px;
-}
+        /* Back Button */
+        .back-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
 
-.back-btn img{
-    width:28px;
-    padding:5px;
-    border-radius:50%;
-    background:#f0f0f0;
-    transition:0.3s;
-}
+        .back-btn img {
+            width: 28px;
+            padding: 5px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            transition: 0.3s;
+        }
 
-.back-btn img:hover{
-    background:#162a47;
-}
+        .back-btn img:hover {
+            background: #162a47;
+            filter: invert(1);
+        }
 
-/* Title */
-h2{
-    text-align:center;
-    margin-bottom:20px;
-}
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #162a47;
+        }
 
-/* Inputs */
-input{
-    width:100%;
-    padding:12px;
-    margin-bottom:15px;
-    border:1px solid #ccc;
-    border-radius:6px;
-}
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box; /* Ensures padding doesn't break width */
+        }
 
-/* Button */
-button{
-    width:100%;
-    padding:12px;
-    border:none;
-    background:#162a47;
-    color:white;
-    border-radius:6px;
-    cursor:pointer;
-}
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #162a47;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-button:hover{
-    background:#0d6efd;
-}
-</style>
+        button:hover {
+            background: #0d6efd;
+        }
+    </style>
 </head>
-
 <body>
 
 <div class="login-box">
-
-    <!-- Back Button -->
     <a href="index.html" class="back-btn">
         <img src="https://cdn-icons-png.flaticon.com/128/9312/9312240.png" alt="Back">
     </a>
 
     <h2>Student Login</h2>
 
-    <input type="email" placeholder="Enter your email">
+    <input type="text" id="studentName" placeholder="Enter your Name">
     <input type="password" placeholder="Enter your password">
 
     <button onclick="loginStudent()">Login</button>
 </div>
 
 <script>
-function loginStudent(){
-    alert("Login Successful!");
-}
+    function loginStudent() {
+        // 1. Get the value from the input field using the ID
+        const nameInput = document.getElementById("studentName").value;
+
+        // 2. Check if the name is empty or just spaces
+        if (nameInput.trim() !== "") {
+            // 3. Store the name in the browser's memory
+            localStorage.setItem("username", nameInput);
+            
+            // 4. Redirect to the details page
+            window.location.href = "details.html";
+        } else {
+            // Alert the user if they forgot to type a name
+            alert("Please enter your name before logging in.");
+        }
+    }
 </script>
 
 </body>

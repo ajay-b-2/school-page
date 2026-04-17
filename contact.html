@@ -1,106 +1,149 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact - Bright School</title>
 
     <style>
-    .back-btn{
-    position:absolute;
-    top:20px;
-    left:20px;
-}
-.back-btn img{
-    width:28px;
-    padding:5px;
-    border-radius:50%;
-    background:#f0f0f0;
-    transition:0.3s;
-}
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f7fb;
+        }
 
-.back-btn img:hover{
-    background:#162a47;
-}
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
 
-/* contact container */
-.contact-section{
-    padding:60px 20px;
-    background:#f4f7fb;
-    text-align:center;
-}
+        .back-btn img {
+            width: 28px;
+            padding: 8px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
 
-.contact-section h2{
-    color:#162a47;
-    margin-bottom:30px;
-}
+        .back-btn img:hover {
+            background: #162a47;
+            filter: invert(1);
+        }
 
-/* Container */
-.contact-container{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-}
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 20px 40px;
+            text-align: center;
+        }
 
-/* Boxes */
-.contact-box{
-    background:white;
-    padding:25px;
-    width:260px;
-    border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
+        .contact-section h2 {
+            color: #162a47;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
 
-.contact-box:hover{
-    transform:translateY(-8px);
-}
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.contact-box h3{
-    color:#162a47;
-    margin-bottom:10px;
-}
+        .contact-box {
+            background: white;
+            padding: 30px;
+            width: 280px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
 
-.contact-box p{
-    color:#555;
-    line-height:1.6;
-    font-size:15px;
-}
+        .contact-box:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid #003c97;
+        }
 
-</style>
+        .contact-box h3 {
+            color: #162a47;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .contact-box p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 15px;
+            margin: 0;
+        }
+
+        /* Google Map Section */
+        .map-section {
+            width: 100%;
+            height: 450px;
+            margin-top: 50px;
+            background: #e5e3df;
+            line-height: 0; /* Removes bottom gap */
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .contact-box {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    </style>
 </head>
 <body>
-    
-
 
     <a href="index.html" class="back-btn">
-    <img src="https://cdn-icons-png.flaticon.com/128/9312/9312240.png" alt="Back" width="30">
+        <img src="https://cdn-icons-png.flaticon.com/128/9312/9312240.png" alt="Back">
+    </a>
 
-<!-- Contact Section -->
+    <section class="contact-section">
+        <h2>For More Details</h2>
 
-<section class="contact-section">
-    <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-box">
+                <h3>Address</h3>
+                <p>
+                    <strong>Bright School Campus</strong><br>
+                    Main Road, New york<br>
+                    
+                </p>
+            </div>
 
-    <div class="contact-container">
-        <div class="contact-box">
-            <h3>Address</h3>
-            <p>Midtown School<br>op<br>new york</p>
+            <div class="contact-box">
+                <h3>Phone</h3>
+                <p>+91 98765 43210<br>+91 491 234567</p>
+            </div>
+
+            <div class="contact-box">
+                <h3>Email</h3>
+                <p>info@brightschool.edu<br>admissions@brightschool.edu</p>
+            </div>
         </div>
+    </section>
 
-        <div class="contact-box">
-            <h3>Phone</h3>
-            <p>+91 98765 43210</p>
-        </div>
-
-        <div class="contact-box">
-            <h3>Email</h3>
-            <p>midtownschool@gmail.com</p>
-        </div>
+    <div class="map-section">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125406.1084281734!2d76.56586026857187!3d10.773384950853544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba86dfa087d31ad%3A0xf542d6eb6a244918!2sPalakkad%2C%20Kerala!5e0!3m2!1sen!2sin!4v1711234567890!5m2!1sen!2sin" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
     </div>
-</section>
 
-
-
-</a>
 </body>
 </html>

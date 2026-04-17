@@ -299,52 +299,110 @@ header{
     }
 }
 
-.contact-section{
-    padding:60px 20px;
-    background:#f4f7fb;
-    text-align:center;
+/* Container to ensure the card doesn't touch the screen edges */
+.contact-section {
+    padding: 60px 0; /* Vertical spacing */
+    background: #f4f7fb;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the card horizontally */
+    min-height: auto; /* Prevents stretching to full screen height */
 }
 
-.contact-section h2{
-    color:#162a47;
-    margin-bottom:30px;
+.contact-section h2 {
+    color: #162a47;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
 }
 
-/* Container */
-.contact-container{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
+/* The Card itself */
+.unified-card {
+    width: 90%; /* Ensures it never touches the left/right edges */
+    max-width: 850px; /* The specific width limit */
+    margin: 0 auto; /* Extra insurance for centering */
+    display: inline;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    /* Remove min-height: 400px; if you want it to wrap tightly around content */
 }
 
-/* Boxes */
-.contact-box{
-    background:white;
-    padding:25px;
-    width:260px;
-    border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
-    transition:0.3s;
+.card-sidebar {
+    background: #162a47;
+    color: white;
+    padding: 40px; 
+    flex: 0 0 300px; /* Fixes the sidebar width so it doesn't grow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
 }
 
-.contact-box:hover{
-    transform:translateY(-8px);
+.card-sidebar h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px; /* Reduced from 50px to save space */
 }
 
-.contact-box h3{
-    color:#162a47;
-    margin-bottom:10px;
+.card-sidebar p {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.8;
+    margin: 0;
 }
 
-.contact-box p{
-    color:#555;
-    line-height:1.6;
-    font-size:15px;
+/* Right Side: Contact Details */
+.card-main {
+    flex: 1; 
+    padding: 40px;
+    text-align: left;
 }
 
+.info-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
 
+.info-group h4 {
+    margin: 0 0 3px 0;
+    color: #162a47;
+    font-size: 1rem;
+}
 
+.info-group p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.icon-circle {
+    width: 36px;
+    height: 36px;
+    background: #f0f4f8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #162a47;
+    font-size: 14px;
+}
+
+/* Responsive fix for mobile */
+@media (max-width: 768px) {
+    .unified-card {
+        flex-direction: column;
+        width: 95%;
+        max-width: 450px; /* Keeps it small on mobile too */
+    }
+    .card-sidebar {
+        flex: none;
+        width: 100%;
+        padding: 30px;
+    }
+}
 </style>
 </head>
 <body>
@@ -427,22 +485,49 @@ header{
 <!-- Contact Section -->
 
 <section class="contact-section">
-    <h2>Contact Us</h2>
+    <h2>Reach Out to Us</h2>
 
-    <div class="contact-container">
-        <div class="contact-box">
-            <h3>Address</h3>
-            <p>Midtown School<br>op<br>new york</p>
+    <div class="unified-card">
+        <div class="card-sidebar">
+            <h3>Visit Bright School</h3>
+            <p>Our campus is open for visits Monday through Friday, 9:00 AM to 4:00 PM. We invite parents and students to explore our world-class facilities and meet our dedicated faculty.</p>
+            <div style="margin-top: 20px; font-size: 13px;">
+                <strong>Office Hours:</strong><br>
+                Mon - Fri: 8:00 AM - 5:00 PM<br>
+                Sat: 9:00 AM - 1:00 PM
+            </div>
         </div>
 
-        <div class="contact-box">
-            <h3>Phone</h3>
-            <p>+91 98765 43210</p>
-        </div>
+        <div class="card-main">
+            <div class="info-group">
+                <div class="icon-circle">A</div>
+                <div>
+                    <h4>Campus Address</h4>
+                    <p>
+                        <strong>Bright School Midtown</strong><br>
+                        123 Educational Plaza, Midtown South<br>
+                        New York, NY 10001
+                    </p>
+                </div>
+            </div>
 
-        <div class="contact-box">
-            <h3>Email</h3>
-            <p>midtownschool@gmail.com</p>
+            <div class="info-group">
+                <div class="icon-circle">P</div>
+                <div>
+                    <h4>Phone Numbers</h4>
+                    <p>Main Office: +91 98765 43210</p>
+                    <p>Admissions: +91 98765 43211</p>
+                </div>
+            </div>
+
+            <div class="info-group">
+                <div class="icon-circle">E</div>
+                <div>
+                    <h4>Email Inquiries</h4>
+                    <p>General: info@brightschool.edu</p>
+                    <p>Support: support@brightschool.edu</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
